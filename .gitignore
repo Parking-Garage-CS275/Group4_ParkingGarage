@@ -32,3 +32,4 @@
 *.app
 /ParkingGarage/nbproject/private/
 /ParkingGarage/build/
+/ParkingGarage/dist/
