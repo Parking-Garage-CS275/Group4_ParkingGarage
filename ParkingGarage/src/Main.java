@@ -1,3 +1,4 @@
+
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.Scanner; // Import the Scanner class to read text files
@@ -98,9 +99,9 @@ public class Main {
             System.out.println(totalStay + " minutes");
             
             
-            double RATE = 2; // 2 cents per minute at the parking garage
+            double RATE = 0.02; // 2 cents per minute at the parking garage
             double minutesStayed = totalStay;
-            double chargeAmount = (minutesStayed * RATE)/10; // 10 is to make the monetary value in cents
+            double chargeAmount = (minutesStayed * RATE);
             
             System.out.println("Total Charge for CUSTOMER: $" + String.format("%.2f",chargeAmount) + "    Minutes Stayed: " + totalStay);
         }
