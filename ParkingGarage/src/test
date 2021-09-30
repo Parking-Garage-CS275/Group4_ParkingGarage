@@ -1,0 +1,16 @@
+public class Main {
+    
+    public static void main(String[] args){
+        System.out.println("Hello World");
+        PGarage g1 = new PGarage(5,20);
+        g1.getCCOunt();
+        g1.countUp();
+        g1.getCCOunt();
+        g1.countUp();
+        g1.getCCOunt();
+        g1.countDown();
+        g1.getCCOunt();
+        g1.getTSpaces();
+                
+    }
+}

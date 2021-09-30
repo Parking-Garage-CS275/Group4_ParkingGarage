@@ -107,5 +107,19 @@ public class Main {
         
         
         
+
+    
+   
+        PGarage g1 = new PGarage();
+        g1.getCCOunt();
+        g1.countUp();
+        g1.getCCOunt();
+        g1.countUp();
+        g1.getCCOunt();
+        g1.countDown();
+        g1.getCCOunt();
+        g1.getTSpaces();
+                
+
     }
 }
