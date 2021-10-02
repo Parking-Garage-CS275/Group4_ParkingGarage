@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Database {
     private static String FILENAME;
     private static File DATAFILE;
-    private static ArrayList<Customer> CUSTOMER = new ArrayList<Customer>();
+    private static ArrayList<Customer> CUSTOMERS = new ArrayList<Customer>();
     
     /*
     Constructor Method;
@@ -26,17 +26,18 @@ public class Database {
         
         DATAFILE = new File(FILENAME);
         
-        CUSTOMER = readFile();
+        readFile();
     }
     
     /*
-    
+    TODO: This should work if the CUSTOMER ARRAYLIST WORKS.
     */
     public static void writeToFile(){
         try {
             FileWriter DataWriter = new FileWriter(FILENAME);
-            for(int i = 0; i < CUSTOMER.size(); i++){
-                DataWriter.write(CUSTOMER.get(i) + "\n");
+            for(int i = 0; i < CUSTOMERS.size(); i++){
+                DataWriter.write(CUSTOMERS.get(i) + "\n");
+                System.out.println(CUSTOMERS.get(i));
             }
             DataWriter.close();
             System.out.println("Successfully wrote to the file.");
@@ -50,28 +51,27 @@ public class Database {
     Read File Method, used with the constructor, to store all the customers in
     an arraylist for easy access when running the program.
     */
-    private static ArrayList<Customer> readFile(){
-        ArrayList<Customer> lines = new ArrayList<Customer>();
+    private static void readFile(){
         try{
             Scanner reader = new Scanner(DATAFILE);
             while(reader.hasNextLine()){
                 //System.out.println(reader.nextLine());
-                Customer id = new Customer(reader.nextLine());
-                //System.out.println(id);
-                lines.add(id);
+                String data = reader.nextLine();
+                CUSTOMERS.add(new Customer(data));
+                //System.out.println(data);
             }
-            for(Customer i: lines){
-                System.out.println(i);
+            //TODO: The arraylist wont hold the correct customer data and will only
+            //      hold the last customer inputed from the file.
+            for(int i = 0; i < CUSTOMERS.size(); i++){
+                System.out.println(CUSTOMERS.get(i) + "\n");
             }
         } catch (FileNotFoundException e){
             System.out.println("A READ error has occured: ");
             e.printStackTrace();
         }
-        
-        return lines;
     }
     
     public static ArrayList<Customer> getCustomers(){
-        return CUSTOMER;
+        return CUSTOMERS;
     }
 }

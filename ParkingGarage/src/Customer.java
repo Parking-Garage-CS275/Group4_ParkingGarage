@@ -13,17 +13,18 @@ public class Customer {
     */
     public Customer(String Data){
         System.out.println("NEW CUSTOMER");
-        System.out.println(Data);
         String[] tokens = Data.split(",");
         ID = Integer.parseInt(tokens[0]);
         NAME = tokens[1] + " " + tokens[2];
         PARKING_SPOT = Integer.parseInt(tokens[3]);
         CHECK_IN = tokens[4];
-        PAID = Boolean.getBoolean(tokens[5]);  
+        PAID = Boolean.getBoolean(tokens[5]);
+        //System.out.println(Data);
     }
     
     /*
     Constructor which doesnt take in any data and is just a empty object
+    DO NOT USE AT THE MOMENT (SPRINT 1)
     */
     public Customer(){
     }
