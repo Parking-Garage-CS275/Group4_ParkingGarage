@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * @author davidkratz
  */
 public class Time {
-    public static void Time(String[] args) throws FileNotFoundException{
+    public static void Time() throws FileNotFoundException{
         
         //array of months according to how many days
         ArrayList<Integer> months = new ArrayList<Integer>(12); // Create an ArrayList object
