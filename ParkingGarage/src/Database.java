@@ -9,9 +9,9 @@ import java.util.ArrayList;
 
 
 public class Database {
-    private static String FILENAME;
-    private static File DATAFILE;
-    private static ArrayList<Customer> CUSTOMERS = new ArrayList<Customer>();
+    private String FILENAME;
+    private File DATAFILE;
+    private ArrayList<Customer> CUSTOMERS = new ArrayList<Customer>();
     
     /*
     Constructor Method;
@@ -22,17 +22,18 @@ public class Database {
     Param: String _fileName takes the name of the file
     */
     public Database(String _fileName){
-        FILENAME = _fileName;
+        this.FILENAME = _fileName;
         
-        DATAFILE = new File(FILENAME);
+        this.DATAFILE = new File(FILENAME);
         
         readFile();
     }
     
     /*
     TODO: This should work if the CUSTOMER ARRAYLIST WORKS.
+    It now works 10/5/2021
     */
-    public static void writeToFile(){
+    public void writeToFile(){
         try {
             FileWriter DataWriter = new FileWriter(FILENAME);
             for(int i = 0; i < CUSTOMERS.size(); i++){
@@ -51,7 +52,7 @@ public class Database {
     Read File Method, used with the constructor, to store all the customers in
     an arraylist for easy access when running the program.
     */
-    private static void readFile(){
+    private void readFile(){
         try{
             Scanner reader = new Scanner(DATAFILE);
             while(reader.hasNextLine()){
@@ -60,8 +61,6 @@ public class Database {
                 CUSTOMERS.add(new Customer(data));
                 //System.out.println(data);
             }
-            //TODO: The arraylist wont hold the correct customer data and will only
-            //      hold the last customer inputed from the file.
             for(int i = 0; i < CUSTOMERS.size(); i++){
                 System.out.println(CUSTOMERS.get(i) + "\n");
             }
@@ -71,7 +70,7 @@ public class Database {
         }
     }
     
-    public static ArrayList<Customer> getCustomers(){
+    public ArrayList<Customer> getCustomers(){
         return CUSTOMERS;
     }
 }

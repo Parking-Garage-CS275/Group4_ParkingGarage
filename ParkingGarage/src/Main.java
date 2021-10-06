@@ -10,6 +10,17 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException{
         
+        /*
+        This how to read the file and get the data into a arraylist
+        Database File = new Database("src/Database.txt");
+        Arraylist<Customer> CustomerData = File.getCustomers();
+        
+        Use method writeToFile() to close out the program so all the data is written to the file
+        
+        */
+        
+        
+        
         //array of months according to how many days
         ArrayList<Integer> months = new ArrayList<Integer>(12); // Create an ArrayList object
         months.add(31);
@@ -120,7 +131,7 @@ public class Main {
         g1.countDown();
         g1.getCCOunt();
         g1.getTSpaces();
-                
+              
 
     }
 }

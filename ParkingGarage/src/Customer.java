@@ -1,9 +1,9 @@
 public class Customer {
-    private static String NAME;
-    private static int ID;
-    private static int PARKING_SPOT;
-    private static boolean PAID;
-    private static String CHECK_IN;
+    private String NAME;
+    private int ID;
+    private int PARKING_SPOT;
+    private boolean PAID;
+    private String CHECK_IN;
     
     
     /*
@@ -14,11 +14,11 @@ public class Customer {
     public Customer(String Data){
         System.out.println("NEW CUSTOMER");
         String[] tokens = Data.split(",");
-        ID = Integer.parseInt(tokens[0]);
-        NAME = tokens[1] + " " + tokens[2];
-        PARKING_SPOT = Integer.parseInt(tokens[3]);
-        CHECK_IN = tokens[4];
-        PAID = Boolean.getBoolean(tokens[5]);
+        this.ID = Integer.parseInt(tokens[0]);
+        this.NAME = tokens[1] + " " + tokens[2];
+        this.PARKING_SPOT = Integer.parseInt(tokens[3]);
+        this.CHECK_IN = tokens[4];
+        this.PAID = Boolean.getBoolean(tokens[5]);
         //System.out.println(Data);
     }
     
@@ -34,12 +34,12 @@ public class Customer {
     True would then be false;
     False would then be true;
     */
-    public static void changePAID(){
+    public void changePAID(){
         if(PAID){
-            PAID = false;
+            PAID = true;
         }
         else{
-            PAID = true;
+            PAID = false;
         }
     }
     
@@ -47,27 +47,27 @@ public class Customer {
     Change the check in Time/Date
     Param: String of the Time/Date
     */
-    public static void changeCheckIn(String _NewDate){
+    public void changeCheckIn(String _NewDate){
         CHECK_IN = _NewDate;
     }
     
-    public static String getNAME(){
+    public String getNAME(){
         return NAME;
     }
     
-    public static int getID(){
+    public int getID(){
         return ID;
     }
     
-    public static int getParkingSpot(){
+    public int getParkingSpot(){
         return PARKING_SPOT;
     }
     
-    public static boolean getPAID(){
+    public boolean getPAID(){
         return PAID;
     }
     
-    public static String getCheckIn(){
+    public String getCheckIn(){
         return CHECK_IN;
     }
     
