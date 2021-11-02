@@ -19,7 +19,7 @@ public class Main {
         
         */
         
-    
+        Connect.connect();
         
 
     
