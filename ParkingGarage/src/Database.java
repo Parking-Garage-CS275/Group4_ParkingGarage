@@ -59,6 +59,7 @@ public class Database {
                 //System.out.println(reader.nextLine());
                 String data = reader.nextLine();
                 CUSTOMERS.add(new Customer(data));
+                
                 //System.out.println(data);
             }
             for(int i = 0; i < CUSTOMERS.size(); i++){
@@ -72,5 +73,9 @@ public class Database {
     
     public ArrayList<Customer> getCustomers(){
         return CUSTOMERS;
+    }
+    
+    public String getParkingSpot(int index){
+        return CUSTOMERS.get(index).getParkingSpot();
     }
 }

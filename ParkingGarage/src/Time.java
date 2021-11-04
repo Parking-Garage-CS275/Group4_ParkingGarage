@@ -13,6 +13,23 @@ import java.util.ArrayList;
  * @author davidkratz
  */
 public class Time {
+    //member data here
+    
+    
+    
+    
+    
+    
+    //need constructor here
+    
+    
+    
+    
+    
+    
+    //method(s) for calculating time spent in parking spot and how much customer owes
+    
+    
     public static void Time() throws FileNotFoundException{
         
         //array of months according to how many days

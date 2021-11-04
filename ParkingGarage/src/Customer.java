@@ -1,7 +1,7 @@
 public class Customer {
     private String NAME;
     private int ID;
-    private int PARKING_SPOT;
+    private String PARKING_SPOT;
     private boolean PAID;
     private String CHECK_IN;
     
@@ -16,7 +16,7 @@ public class Customer {
         String[] tokens = Data.split(",");
         this.ID = Integer.parseInt(tokens[0]);
         this.NAME = tokens[1] + " " + tokens[2];
-        this.PARKING_SPOT = Integer.parseInt(tokens[3]);
+        this.PARKING_SPOT = tokens[3];
         this.CHECK_IN = tokens[4];
         this.PAID = Boolean.getBoolean(tokens[5]);
         //System.out.println(Data);
@@ -59,7 +59,7 @@ public class Customer {
         return ID;
     }
     
-    public int getParkingSpot(){
+    public String getParkingSpot(){
         return PARKING_SPOT;
     }
     
