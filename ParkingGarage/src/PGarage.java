@@ -11,34 +11,15 @@ import static java.lang.Integer.parseInt;
  * @author Owner
  */
 public class PGarage {
-    //private int _carcount = 0;
-    //private int _floors = 0;
-    //private int _spaces = 0;
-    //private int _totalSpaces = 0;
-    //private int _avaliableSpaces = 0;
+    
 
     //this array is meant to start empty
     public int[][] _parkingSpots = new int[5][20];
     
-    //ADD METHOD TO COUNT PARKING SPOTS FILLED PER FLOOR
     
     public PGarage(){
-        /*int[][] garage = new int[5][];
         
-        garage[0] = new int[] {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
-        garage[1] = new int[] {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
-        garage[2] = new int[] {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
-        garage[3] = new int[] {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
-        garage[4] = new int[] {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};  
-
-        for(int[] arr: garage) {
-            for(int n: arr) {
-               _totalSpaces ++;
-                System.out.print(n+" ");
-            }
-            System.out.println();
-    }
-         _avaliableSpaces = _totalSpaces;*/
+        
     }
     
     public int[][] fillParkingSpot(String parkingSpot){
@@ -84,19 +65,19 @@ public class PGarage {
         int floorIndex = -1;
         
         //convert floor letter to the proper index of the parking spot array
-        if(floorLetter == "A"){
+        if("A".equals(floorLetter)){
             floorIndex = 0;
-        }else if(floorLetter == "B"){
+        }else if("B".equals(floorLetter)){
             floorIndex = 1;
-        }else if(floorLetter == "C"){
+        }else if("C".equals(floorLetter)){
             floorIndex = 2;
-        }else if(floorLetter == "D"){
+        }else if("D".equals(floorLetter)){
             floorIndex = 3;
-        }else if(floorLetter == "E"){
+        }else if("E".equals(floorLetter)){
             floorIndex = 4;
         }
         
-        if(_parkingSpots[floorIndex][spotNum] == 1){
+        if(_parkingSpots[floorIndex][spotNum -1] == 1){
             isFilled = true;
         }
         return isFilled;
@@ -104,33 +85,13 @@ public class PGarage {
     
     public void showFilledSpots(){
         for(int i = 0 ; i <_parkingSpots.length ; i++){
+            System.out.println("\n");
             for(int j = 0 ; j < _parkingSpots[i].length ; j++){
-                System.out.println(_parkingSpots[i][j]);
+                System.out.print(_parkingSpots[i][j]);
             }
         }
-        
+        System.out.println("\n");
     }
     
-   /*  
-    public int countUp (){
-        _carcount ++;
-        _avaliableSpaces --;
-        return _carcount;
-    }
-    public int countDown (){
-        _carcount --;
-        _avaliableSpaces ++;
-        return _carcount;
-    }
-    public int getCCOunt(){
-        System.out.println("Cars in Garage:" +_carcount);
-        return _carcount;
-    }
-    public int getTSpaces(){
-        System.out.println("Total Spaces:" + _totalSpaces);
-        System.out.println(_avaliableSpaces);
-        return _totalSpaces;
-    }
-    
-    */
+   
 }
