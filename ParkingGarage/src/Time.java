@@ -15,7 +15,9 @@ import java.util.ArrayList;
 public class Time {
     //member data here
     
-    
+    private int checkInDate;
+    private int checkOutDate;
+    private static double rate;
     
     
     
@@ -28,9 +30,12 @@ public class Time {
     
     
     //method(s) for calculating time spent in parking spot and how much customer owes
-    
-    
-    public static void Time() throws FileNotFoundException{
+    public static double Duration(int checkInDate, int checkOutDate){
+        
+        //change to strings
+        String checkInDateS =Integer.toString(checkInDate);
+        String checkOutDateS =Integer.toString(checkOutDate);
+        
         
         //array of months according to how many days
         ArrayList<Integer> months = new ArrayList<Integer>(12); // Create an ArrayList object
@@ -47,30 +52,19 @@ public class Time {
         months.add(31);
         months.add(31);
         
-
-        //read from a file
-        
-        File testfile = new File("testfile.txt");  //open file from file path
-        Scanner scanner = new Scanner(testfile);  //create scanner
-        while (scanner.hasNextLine()){ 
+                 
+            String hour = checkInDateS.substring(0,2);
+            String minute = checkInDateS.substring(2,4);
+            String day = checkInDateS.substring(4,6);
+            String month = checkInDateS.substring(6,8);
+            String year = checkInDateS.substring(8,12);
             
-            //break into substrings
+            String hour2 = checkOutDateS.substring(0,2);
+            String minute2 = checkOutDateS.substring(2,4);
+            String day2 = checkOutDateS.substring(4,6);
+            String month2 = checkOutDateS.substring(6,8);
+            String year2 = checkOutDateS.substring(8,12);
             
-            String line = scanner.nextLine();  //text file line to be split
-            
-            System.out.println(line);       //test print
-            
-            String hour = line.substring(0,2);
-            String minute = line.substring(2,4);
-            String day = line.substring(4,6);
-            String month = line.substring(6,8);
-            String year = line.substring(8,12);
-            
-            String hour2 = line.substring(12,14);
-            String minute2 = line.substring(14,16);
-            String day2 = line.substring(16,18);
-            String month2 = line.substring(18,20);
-            String year2 = line.substring(20,24);
             
             //change to ints
             int ihour = Integer.parseInt(hour);
@@ -118,19 +112,52 @@ public class Time {
             
             int totalStay = checkoutCount - checkinCount;
             
-            System.out.println(totalStay + " minutes");
+            //System.out.println(totalStay + " minutes");
             
             
-            double RATE = 0.02; // 2 cents per minute at the parking garage
+            //double RATE = 0.02; // 2 cents per minute at the parking garage
             double minutesStayed = totalStay;
-            double chargeAmount = (minutesStayed * RATE);
+            //double chargeAmount = (minutesStayed * RATE);
             
-            System.out.println("Total Charge for CUSTOMER: $" + String.format("%.2f",chargeAmount) + "    Minutes Stayed: " + totalStay);
+            //System.out.println("Total Charge for CUSTOMER: $" + String.format("%.2f",chargeAmount) + "    Minutes Stayed: " + totalStay);
         
             
+        return minutesStayed;
         
         
-        }
     }
     
-}    
+
+    
+    public static double Pay(double minutesStayed, Customer customer){
+        
+        rate = .02;
+        
+        double payment = 0;
+        
+        
+        if (customer.subscriber == true){
+            
+            rate = rate - (rate * .25);
+            
+            payment = rate * minutesStayed;
+            
+        }
+        
+        else{
+            
+            
+            payment = rate * minutesStayed;
+            
+            
+        }
+        
+        
+        return payment;
+        
+        
+    }
+    
+    
+}
+   

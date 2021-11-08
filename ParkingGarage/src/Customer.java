@@ -1,9 +1,11 @@
 public class Customer {
+    
     private String NAME;
     private int ID;
     private String PARKING_SPOT;
     private boolean PAID;
     private String CHECK_IN;
+    public boolean subscriber;
     
     
     /*
