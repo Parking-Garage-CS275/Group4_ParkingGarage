@@ -179,6 +179,26 @@ public class Connect {
         }
         return Subscriber;
     }
+    /**
+     * Helper method to get the data for determining whether or not the account
+     * is a subscriber or not.
+     * 
+     * @param AccountID String, the account member's ID
+     * @return the subscriber value, either 0 or 1. If -1 there has been an error
+     */
+    public int selectAccountSubscriber(String AccountID){
+        int Subscriber = -1;
+        String sql = "SELECT Subscriber FROM ACCOUNTS WHERE AccountID = ?";
+        try(Connection conn = this.connect(); PreparedStatement pstmt  = conn.prepareStatement(sql)){
+            pstmt.setString(1, AccountID);
+            ResultSet rs = pstmt.executeQuery();
+            Subscriber = rs.getInt("Subscriber");
+            
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return Subscriber;
+    }
     
     /**
      * Returns the Username in a string form using the input of the account 
@@ -204,6 +224,27 @@ public class Connect {
     }
     
     /**
+     * Returns the Username in a string form using the input of the account 
+     * member's name
+     * 
+     * @param AccountID String, the account member's ID
+     * @return String of the Account Username
+     */
+    public String selectAccountUsername(String AccountID){
+        String Username = "";
+        String sql = "SELECT Username FROM ACCOUNTS WHERE AccountID = ?";
+        try(Connection conn = this.connect(); PreparedStatement pstmt  = conn.prepareStatement(sql)){
+            pstmt.setString(1, AccountID);
+            ResultSet rs = pstmt.executeQuery();
+            Username = rs.getString("Username");
+            
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return Username;
+    }
+    
+    /**
      * Returns the Password in a string form using the input of the account 
      * member's name
      * 
@@ -218,7 +259,28 @@ public class Connect {
             pstmt.setString(1, firstname);
             pstmt.setString(2, lastname);
             ResultSet rs = pstmt.executeQuery();
-            Password = rs.getString("Username");
+            Password = rs.getString("Password");
+            
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return Password;
+    }
+    
+    /**
+     * Returns the Password in a string form using the input of the account 
+     * member's name
+     * 
+     * @param AccountID String, the account member's ID
+     * @return String of the Account Password
+     */
+    public String selectAccountPassword(String AccountID){
+        String Password = "";
+        String sql = "SELECT Password FROM ACCOUNTS WHERE AccountID = ?";
+        try(Connection conn = this.connect(); PreparedStatement pstmt  = conn.prepareStatement(sql)){
+            pstmt.setString(1, AccountID);
+            ResultSet rs = pstmt.executeQuery();
+            Password = rs.getString("Password");
             
         } catch (SQLException e){
             System.out.println(e.getMessage());
@@ -252,6 +314,30 @@ public class Connect {
     }
     
     /**
+     * Updates whether the account is a subscriber or not, it will change the 
+     * subscriber value from a (1 to 0) or (0 to 1).
+     * 
+     * @param AccountID String, account member's ID
+     */
+    public void updateSubscriber(String AccountID){
+        int Subscriber = this.selectAccountSubscriber(AccountID);
+        String sql = "UPDATE ACCOUNTS SET Subscriber = ? WHERE id = ?";
+        try(Connection conn = this.connect(); PreparedStatement pstmt  = conn.prepareStatement(sql)){
+            if (Subscriber == 0){
+                pstmt.setInt(1, 1);
+            }
+            else {
+                pstmt.setInt(1, 0);
+            }
+            pstmt.setString(2, AccountID);
+            pstmt.executeUpdate(sql);
+            
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    /**
      * Updates the Account's username using the update SQL statement
      * 
      * @param firstname String, Account's first name
@@ -271,6 +357,24 @@ public class Connect {
     }
     
     /**
+     * Updates the Account's username using the update SQL statement
+     * 
+     * @param AccountID String, Account's ID
+     * @param Username String, New username for the account
+     */
+    public void updateUsername(String AccountID, String Username){
+        String sql = "UPDATE ACCOUNTS SET Username = ? WHERE id = ?";
+        try(Connection conn = this.connect(); PreparedStatement pstmt  = conn.prepareStatement(sql)){
+            pstmt.setString(1, Username);
+            pstmt.setString(2, AccountID);
+            pstmt.executeUpdate(sql);
+            
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    /**
      * Updates the Account's password using the update SQL statement
      * 
      * @param firstname String, Account's first name
@@ -282,6 +386,23 @@ public class Connect {
         try(Connection conn = this.connect(); PreparedStatement pstmt  = conn.prepareStatement(sql)){
             pstmt.setString(1, Password);
             pstmt.setString(2, this.selectAccountID(firstname, lastname));
+            pstmt.executeUpdate(sql);
+            
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+    }
+    /**
+     * Updates the Account's password using the update SQL statement
+     * 
+     * @param AccountID String, Account's ID
+     * @param Password String, New password for the account
+     */
+    public void updatePassword(String AccountID, String Password){
+        String sql = "UPDATE ACCOUNTS SET Password = ? WHERE id = ?";
+        try(Connection conn = this.connect(); PreparedStatement pstmt  = conn.prepareStatement(sql)){
+            pstmt.setString(1, Password);
+            pstmt.setString(2, AccountID);
             pstmt.executeUpdate(sql);
             
         } catch (SQLException e){
@@ -367,6 +488,45 @@ public class Connect {
     }
     
     /**
+     * Input in the spot name and it will return the check in time for that 
+     * spot in the form of a string.
+     * 
+     * @param spotNum String, the name of the spot
+     * @return String, the CheckInTime
+     */
+    public String selectCheckInTime(String spotNum){
+        String CheckInTime = "";
+        String sql = "SELECT CheckInTime FROM ACCOUNTS WHERE SpotNumber = ?";
+        try(Connection conn = this.connect(); PreparedStatement pstmt  = conn.prepareStatement(sql)){
+            pstmt.setString(1, spotNum);
+            ResultSet rs = pstmt.executeQuery();
+            CheckInTime = rs.getString("CheckInTime");
+            
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return CheckInTime;
+    }
+    
+    /**
+     * Updating the check in time for the spot that you specified.
+     * 
+     * @param spotNum String, the name of the spot
+     * @param CheckInTime String, the time that the account checked in at.
+     */
+    public void updateCheckInTime(String spotNum, String CheckInTime){
+        String sql = "UPDATE ACCOUNTS SET CheckInTime = ? WHERE spotNum = ?";
+        try(Connection conn = this.connect(); PreparedStatement pstmt  = conn.prepareStatement(sql)){
+            pstmt.setString(1, CheckInTime);
+            pstmt.setString(2, spotNum);
+            pstmt.executeUpdate(sql);
+            
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    /**
      * Creates the SQL code for creating the TAKENSPOTS table
      * Then executes the code so the table is created
      * 
@@ -392,8 +552,8 @@ public class Connect {
      * This will insert in a new record into the TAKENSPOTS table, using the 
      * spotID from the SPOTS table and accountID from the ACCOUNTS table
      * 
-     * @param SpotID String, SpotID found from the SPOTS table - use the findSpotID method
-     * @param AccountID String, AccountID found from the ACCOUNTS table - use the findAccountID method
+     * @param SpotID String, SpotID found from the SPOTS table - use the selectSpotID method
+     * @param AccountID String, AccountID found from the ACCOUNTS table - use the selectAccountID method
      */
     public void insertTakenSpot(String SpotID, String AccountID){
         String sql = "INSERT INTO TAKENSPOTS(SpotID,AccountID) VALUES (?,?)";
@@ -427,13 +587,65 @@ public class Connect {
         }
     }
     
-    
-    public void selectTakenSpotID(String SpotID){
-        
+    /**
+     * Inputs the spot name, returns a string of the ID you wanted from the 
+     * takenSpots table
+     * 
+     * @param SpotNum String, the name of the spot
+     * @return String, the ID from the TakenSpots table
+     */
+    public String selectTakenSpotID(String SpotNum){
+        String TakenSpotID = "";
+        String SpotID = this.selectSpotID(SpotNum);
+        String sql = "SELECT id FROM TAKENSPOTS WHERE SpotID = ?";
+        try(Connection conn = this.connect(); PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1, SpotID);
+            ResultSet rs = pstmt.executeQuery();
+            TakenSpotID = Integer.toString(rs.getInt("id"));
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return TakenSpotID;
     }
-   
-    public void deleteTakenSpots(String TakenSpotsID){
-        
+    
+    /**
+     * Inputs the spot name, return a string of the AccountID you were searching
+     * for from the takenSpots table
+     * 
+     * @param SpotNum String, the name of the spot
+     * @return String, the AccountID from the TakenSpots table
+     */
+    public String selectTakenSpotsAccountID(String SpotNum){
+        String AccountID = "";
+        String SpotID = this.selectSpotID(SpotNum);
+        String sql = "SELECT AccountID FROM TAKENSPOTS WHERE SpotID = ?";
+        try(Connection conn = this.connect(); PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1, SpotID);
+            ResultSet rs = pstmt.executeQuery();
+            AccountID = Integer.toString(rs.getInt("AccountID"));
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return AccountID;
+    }
+    
+    /**
+     * Inputs the spot name and then deletes that corresponding element from the
+     * table. 
+     * USE THIS AFTER CHECKING A SPOT OUT SO THAT IT IS FREE TO BE TAKEN AGAIN!
+     * 
+     * @param SpotNum the name of the spot you want to delete
+     */
+    public void deleteTakenSpots(String SpotNum){
+        String id = selectTakenSpotID(SpotNum);
+        String sql = "DELETE FROM TAKENSPOTS WHERE id = ?";
+        try (Connection conn = this.connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, id);
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
     
     /**
