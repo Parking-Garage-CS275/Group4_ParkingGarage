@@ -51,6 +51,7 @@ public class Main {
        String spot4 = "E12";
        System.out.println(spot4);
        System.out.println(parkingGarage.isSpotFilled(spot4));
+       new start().setVisible(true);
        
     }
 }
