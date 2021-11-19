@@ -21,20 +21,12 @@ public class Time {
     
     
     
-    
-    //need constructor here
-    
-    
-    
-    
-    
-    
     //method(s) for calculating time spent in parking spot and how much customer owes
-    public static double Duration(long checkInDate, long checkOutDate){
+    public static double Duration(int checkInDate, int checkOutDate){
         
         //change to strings
-        String checkInDateS =Long.toString(checkInDate);
-        String checkOutDateS =Long.toString(checkOutDate);
+        String checkInDateS =Integer.toString(checkInDate);
+        String checkOutDateS =Integer.toString(checkOutDate);
         
         
         //array of months according to how many days
@@ -100,9 +92,8 @@ public class Time {
             int checkoutCount = (iyear2*365)+iday2;   //gets it to days
             
             for (int i = 0; i < imonth2; i++){
-               
-                checkoutCount += months.get(i);
                 
+                checkoutCount += months.get(i);
                 
                 
             }
