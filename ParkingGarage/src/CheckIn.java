@@ -259,7 +259,7 @@ public class CheckIn extends javax.swing.JFrame {
         
         // TODO add your handling code here:
         // get the selected spot
-        selectedValue = lblSelectedSpot.setText(selectedValue);
+        selectedValue = lblSelectedSpot.getText();
         // split the spot into the floor and number, then fill the spot in the 2D array
         
         floor = selectedValue.substring(0, 1);
