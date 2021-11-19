@@ -14,7 +14,7 @@ public class PGarage {
     
 
     //this array is meant to start empty
-    public int[][] _parkingSpots = new int[5][20];
+    public int[][] _parkingSpots = new int[5][10];
     
     
     public PGarage(){
