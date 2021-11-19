@@ -17,9 +17,13 @@ import java.util.Date;
 public class CalculateTime {
     // Function to print difference in
     // time start_date and end_date
-    static void findDifference(String start_date,String end_date)
-    {
+    
+    
+    
+    
+    public long findDifference(String start_date,String end_date){
   
+        long timeDifference = 0;
         // SimpleDateFormat converts the
         // string format to date object
         SimpleDateFormat sdf
@@ -49,8 +53,7 @@ public class CalculateTime {
                 = (difference_In_Time / (1000 * 60 * 60)) % 24;
   
             long difference_In_Years
-                = (difference_In_Time
-                   / (1000l * 60 * 60 * 24 * 365));
+                = (difference_In_Time / (1000l * 60 * 60 * 24 * 365));
   
             long difference_In_Days
                 = (difference_In_Time / (1000 * 60 * 60 * 24)) % 365;
@@ -62,7 +65,7 @@ public class CalculateTime {
             System.out.print(
                 "Difference "
                 + "between two dates is: ");
-  
+  /*
             System.out.println(
                 difference_In_Years
                 + " years, "
@@ -72,11 +75,15 @@ public class CalculateTime {
                 + " hours, "
                 + difference_In_Minutes
                 + " minutes");
+            */
+            timeDifference = difference_In_Years + difference_In_Days + difference_In_Hours + difference_In_Minutes;
         }
   
         // Catch the Exception
         catch (ParseException e) {
             e.printStackTrace();
         }
+        
+        return timeDifference;
     }
 }

@@ -1,4 +1,5 @@
 
+
 import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.ArrayList;
 
@@ -32,8 +33,20 @@ public class Main {
        }
        
        
-       
-       
+       String start_date
+                = "10-01-2018 01:10";
+
+            // Given end Date
+            String end_date
+                = "05-17-2021 06:35";
+
+            // Function Call
+            
+            String checkInTime = "10-01-2018 01:10" ; String checkOutTime = "05-17-2021 06:35";
+            CalculateTime timeCalculator = new CalculateTime();
+            long difference = (timeCalculator.findDifference(checkInTime, checkOutTime));
+            
+            System.out.println("");
        
        
        new start().setVisible(true);
