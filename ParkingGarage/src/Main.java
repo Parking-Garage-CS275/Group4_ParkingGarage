@@ -33,27 +33,9 @@ public class Main {
        
        
        
-       parkingGarage.showFilledSpots();
        
-       System.out.println("Number of spots currently filled: " + parkingGarage.getCountFilledSpots());
        
-       System.out.println("\n");
        
-       String spot1 = "A19";
-       System.out.println(spot1);
-       System.out.println(parkingGarage.isSpotFilled(spot1));
-       
-       String spot2 = "A20";
-       System.out.println(spot2);
-       System.out.println(parkingGarage.isSpotFilled(spot2));
-       
-       String spot3 = "C06";
-       System.out.println(spot3);
-       System.out.println(parkingGarage.isSpotFilled(spot3));
-       
-       String spot4 = "E12";
-       System.out.println(spot4);
-       System.out.println(parkingGarage.isSpotFilled(spot4));
        new start().setVisible(true);
        //long T1 = 101011122021;
       // Time.Duration(101011122021, 101011132021);
