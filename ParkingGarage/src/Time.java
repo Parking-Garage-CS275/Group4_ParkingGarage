@@ -21,14 +21,6 @@ public class Time {
     
     
     
-    
-    //need constructor here
-    
-    
-    
-    
-    
-    
     //method(s) for calculating time spent in parking spot and how much customer owes
     public static double Duration(int checkInDate, int checkOutDate){
         

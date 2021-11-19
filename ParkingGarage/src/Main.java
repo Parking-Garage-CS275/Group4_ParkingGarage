@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 
 
+
 public class Main {
     public static void main(String[] args) throws FileNotFoundException{
         
@@ -30,6 +31,8 @@ public class Main {
            parkingGarage.fillParkingSpot(database.getParkingSpot(i));
        }
        
+       
+       
        parkingGarage.showFilledSpots();
        
        System.out.println("Number of spots currently filled: " + parkingGarage.getCountFilledSpots());
@@ -52,6 +55,9 @@ public class Main {
        System.out.println(spot4);
        System.out.println(parkingGarage.isSpotFilled(spot4));
        new start().setVisible(true);
+       //long T1 = 101011122021;
+      // Time.Duration(101011122021, 101011132021);
+       
        
     }
 }
