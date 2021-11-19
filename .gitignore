@@ -33,3 +33,4 @@
 /ParkingGarage/nbproject/private/
 /ParkingGarage/build/
 /ParkingGarage/dist/
+*.db
