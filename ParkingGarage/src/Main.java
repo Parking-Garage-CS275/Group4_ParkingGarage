@@ -34,7 +34,7 @@ public class Main {
        
        
        String start_date
-                = "10-01-2018 01:10";
+                = "05-17-2020 06:35";
 
             // Given end Date
             String end_date
@@ -42,16 +42,15 @@ public class Main {
 
             // Function Call
             
-            String checkInTime = "10-01-2018 01:10" ; String checkOutTime = "05-17-2021 06:35";
+            String checkInTime = "05-17-2020 06:35" ; String checkOutTime = "05-17-2021 06:36";
             CalculateTime timeCalculator = new CalculateTime();
-            long difference = (timeCalculator.findDifference(checkInTime, checkOutTime));
+            int difference = (timeCalculator.findDifference(checkInTime, checkOutTime));
             
-            System.out.println("");
+            System.out.println("difference in minutes: " + difference);
        
        
        new start().setVisible(true);
-       //long T1 = 101011122021;
-      // Time.Duration(101011122021, 101011132021);
+       
        
        
     }
