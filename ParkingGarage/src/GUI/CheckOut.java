@@ -1,3 +1,9 @@
+package GUI;
+
+
+import GUI.CheckIn;
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -18,7 +24,7 @@ public class CheckOut extends javax.swing.JFrame {
     public CheckOut() {
         initComponents();
    
-        
+        combSpot.setModel(new javax.swing.DefaultComboBoxModel(CheckIn.leave.toArray()));
     }
 
     /**
@@ -61,6 +67,11 @@ public class CheckOut extends javax.swing.JFrame {
         });
 
         combSpot.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        combSpot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combSpotActionPerformed(evt);
+            }
+        });
 
         btnYes.setText("YES");
 
@@ -193,6 +204,17 @@ public class CheckOut extends javax.swing.JFrame {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
+        
+        // remove spot from unavailable spots array
+        selectedValue = combSpot.getSelectedItem().toString();
+        while (leave.hasNext()) {
+            String x = (String)leave.next();
+            if (x.equals(selectedValue)){
+                leave.remove();
+            }
+        }
+        
+        
        this.duration =  T1.Duration(checkIN,checkOut);
        
        txtDate1.setText("");
@@ -208,6 +230,10 @@ public class CheckOut extends javax.swing.JFrame {
         String duration1 = String.valueOf(duration);
         jTextField2.setText(duration1);
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void combSpotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combSpotActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combSpotActionPerformed
 
     /**
      * @param args the command line arguments
