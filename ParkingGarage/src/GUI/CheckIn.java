@@ -412,7 +412,7 @@ public class CheckIn extends javax.swing.JFrame {
         //**ADD CODE FOR RECEIVING THE CHECK IN TIME/DATE**
         
         txtDate.setText("");
-        JOptionPane.showMessageDialog(this, "You have been checked in, please park in spot " + combSpot.getName() + ".");
+        JOptionPane.showMessageDialog(this, "You have been checked in, please park in spot " + lblSelectedSpot.getText() + ".");
         new start().setVisible(true);
         dispose();
         
