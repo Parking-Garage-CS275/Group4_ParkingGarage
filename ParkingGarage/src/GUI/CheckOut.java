@@ -1,8 +1,8 @@
 package GUI;
 
 
-import GUI.CheckIn.*;
-import static GUI.CheckIn.a;
+//import GUI.CheckIn.*;
+//import static GUI.CheckIn.a;
 import java.util.*;
 import javax.swing.JOptionPane;
  
@@ -173,33 +173,12 @@ public class CheckOut extends javax.swing.JFrame {
         
     }//GEN-LAST:event_txtDate1ActionPerformed
 
-<<<<<<< Updated upstream
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        // TODO add your handling code here:
-        /*
-        // remove spot from unavailable spots array
-        // Get spot that the name aligns with from data base, and remove that spot from leave arraylist
-        /*Iterator itr = CheckIn.leave.iterator();
-        while (itr.hasNext()) {
-            String x = (String)itr.next();
-            if (x.equals(CheckIn.selectedValue)){
-                itr.remove();
-            }
-        }*/
         
-        
-       this.duration =  T1.Duration(checkIN,checkOut);
-       
-       txtDate1.setText("");
-       //txtDate2.setText("");
-       new start().setVisible(true);
-       dispose();
         
         
     }//GEN-LAST:event_btnSubmitActionPerformed
 
-=======
->>>>>>> Stashed changes
     private void btnNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNoActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(this,"Thanks for letting us know, please consider subscribing");

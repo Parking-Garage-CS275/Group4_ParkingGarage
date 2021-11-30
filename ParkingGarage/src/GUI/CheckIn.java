@@ -1,7 +1,7 @@
 package GUI;
 
 
-import GUI.CheckIn;
+//import GUI.CheckIn;
 
 
 /*
@@ -13,7 +13,7 @@ import GUI.CheckIn;
  *
  * @author Owner
  */
-public class CheckOut extends javax.swing.JFrame {
+public class CheckIn extends javax.swing.JFrame {
 
     /**
      * Creates new form CheckOut
