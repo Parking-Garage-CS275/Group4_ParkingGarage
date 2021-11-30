@@ -33,6 +33,6 @@ public class Main {
 
         Connect db = database();
         
-        //new start().setVisible(true);   
+        new start().setVisible(true);   
     }
 }
