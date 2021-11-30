@@ -23,6 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< Updated upstream
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="113" pref="113" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -57,8 +58,25 @@
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <Component id="btnBack" min="-2" max="-2" attributes="0"/>
                           </Group>
+=======
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="283" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" pref="55" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="lblName" max="32767" attributes="0"/>
+                              <Component id="jLabel1" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+>>>>>>> Stashed changes
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< Updated upstream
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                               <Component id="btnSubmit" min="-2" max="-2" attributes="0"/>
@@ -69,11 +87,37 @@
                                   <Component id="jTextField2" min="-2" pref="78" max="-2" attributes="0"/>
                                   <Component id="btnNo" min="-2" max="-2" attributes="0"/>
                               </Group>
+=======
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txtName" pref="153" max="32767" attributes="0"/>
+                              <Component id="txtDate1" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="btnSubmit" min="-2" pref="67" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btnYes" min="-2" pref="67" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnNo" min="-2" pref="68" max="-2" attributes="0"/>
+>>>>>>> Stashed changes
                           </Group>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="307" max="-2" attributes="0"/>
+                      <Component id="lblTotalCost" min="-2" pref="31" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+                      <Component id="btnBack" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
+<<<<<<< Updated upstream
               <EmptySpace pref="410" max="32767" attributes="0"/>
+=======
+              <EmptySpace pref="545" max="32767" attributes="0"/>
+>>>>>>> Stashed changes
           </Group>
       </Group>
     </DimensionLayout>
@@ -92,6 +136,7 @@
                   <Component id="jLabel2" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="combSpot" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+<<<<<<< Updated upstream
               <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -109,6 +154,30 @@
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+=======
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnSubmit" min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace pref="37" max="32767" attributes="0"/>
+              <Component id="lblTotalCost" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jLabel2" min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnYes" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="btnNo" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="btnBack" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="270" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+>>>>>>> Stashed changes
           </Group>
       </Group>
     </DimensionLayout>
@@ -165,6 +234,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="YES"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnYesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnNo">
       <Properties>
@@ -183,6 +255,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackActionPerformed"/>
       </Events>
     </Component>
+<<<<<<< Updated upstream
     <Component class="javax.swing.JButton" name="btnSubmit">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -198,6 +271,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
       </Events>
+=======
+    <Component class="javax.swing.JLabel" name="jLabel2">
+>>>>>>> Stashed changes
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
@@ -211,6 +287,13 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDate2ActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSubmit">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Submit"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTotalCost">
     </Component>
   </SubComponents>
 </Form>
