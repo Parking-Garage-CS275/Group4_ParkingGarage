@@ -32,6 +32,9 @@ public class CheckIn extends javax.swing.JFrame {
     public static String spotNumeral;
     public static String takenSpot = "X";
     public static int counter = 0;
+<<<<<<< HEAD
+>>>>>>> parent of 9264356 (Labels)
+=======
 >>>>>>> parent of 9264356 (Labels)
     /**
      * Creates new form CheckOut
@@ -42,9 +45,12 @@ public class CheckIn extends javax.swing.JFrame {
     public CheckOut() {
         initComponents();
 <<<<<<< HEAD
+<<<<<<< HEAD
    
         combSpot.setModel(new javax.swing.DefaultComboBoxModel(CheckIn.leave.toArray()));
 =======
+=======
+>>>>>>> parent of 9264356 (Labels)
         
         if (counter == 0){
         for(int i = 0; i < 9; i++) {
@@ -117,6 +123,9 @@ public class CheckIn extends javax.swing.JFrame {
         lblSelectedSpot = new javax.swing.JLabel();
         jComboBox5 = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
+<<<<<<< HEAD
+>>>>>>> parent of 9264356 (Labels)
+=======
 >>>>>>> parent of 9264356 (Labels)
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -253,6 +262,9 @@ public class CheckIn extends javax.swing.JFrame {
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(229, Short.MAX_VALUE))
+<<<<<<< HEAD
+>>>>>>> parent of 9264356 (Labels)
+=======
 >>>>>>> parent of 9264356 (Labels)
         );
         layout.setVerticalGroup(
@@ -317,6 +329,9 @@ public class CheckIn extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(438, Short.MAX_VALUE))
+<<<<<<< HEAD
+>>>>>>> parent of 9264356 (Labels)
+=======
 >>>>>>> parent of 9264356 (Labels)
         );
 
