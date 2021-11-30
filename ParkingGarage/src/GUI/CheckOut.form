@@ -39,7 +39,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtDate2" pref="60" max="32767" attributes="0"/>
+                                  <Component id="txtDate2" max="32767" attributes="0"/>
                                   <Component id="txtDate1" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>

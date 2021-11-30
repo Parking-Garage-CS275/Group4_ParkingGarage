@@ -2,6 +2,7 @@ package GUI;
 
 
 
+
 import GUI.PGarage;
 import GUI.start;
 import GUI.CalculateTime;
@@ -13,50 +14,25 @@ import java.util.ArrayList;
 
 
 public class Main {
+    
+    public static Connect database(){
+        Connect database = new Connect();
+        database.createNewDatabase();
+        database.createAccountTable();    
+        database.createSpotsTable();
+        database.createTakenSpotTable();
+        
+        database.selectAllSpots();
+
+
+        return database;
+    }
+    
     public static void main(String[] args) throws FileNotFoundException{
         
-        /*
-        This how to read the file and get the data into a arraylist
-        Database File = new Database("src/Database.txt");
-        Arraylist<Customer> CustomerData = File.getCustomers();
-        
-        Use method writeToFile() to close out the program so all the data is written to the file
-        
-        */
-        
-        
-       PGarage parkingGarage = new PGarage();
-       
-       //read in file and create new customers during runtime
-       Database database = new Database("Database.txt");
-       
-       //fill the parking spot in the garage that the customer picks
-       
-       
-       for(int i = 0 ; i < database.getCustomers().size() ; i++){
-           parkingGarage.fillParkingSpot(database.getParkingSpot(i));
-       }
-       
-       
-       String start_date
-                = "05-17-2020 06:35";
 
-            // Given end Date
-            String end_date
-                = "05-17-2021 06:35";
-
-            // Function Call
-            
-            String checkInTime = "05-17-2020 06:35" ; String checkOutTime = "05-17-2021 06:36";
-            CalculateTime timeCalculator = new CalculateTime();
-            int difference = (timeCalculator.findDifference(checkInTime, checkOutTime));
-            
-            System.out.println("difference in minutes: " + difference);
-       
-       
-       new start().setVisible(true);
-       
-       
-       
+        Connect db = database();
+        
+        //new start().setVisible(true);   
     }
 }

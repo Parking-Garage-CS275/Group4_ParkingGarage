@@ -204,7 +204,7 @@ public class CheckOut extends javax.swing.JFrame {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-        
+        /*
         // remove spot from unavailable spots array
         selectedValue = combSpot.getSelectedItem().toString();
         while (leave.hasNext()) {
@@ -212,7 +212,7 @@ public class CheckOut extends javax.swing.JFrame {
             if (x.equals(selectedValue)){
                 leave.remove();
             }
-        }
+        }*/
         
         
        this.duration =  T1.Duration(checkIN,checkOut);

@@ -1,3 +1,5 @@
+package GUI;
+
 import java.sql.*;
 
 
@@ -665,7 +667,7 @@ public class Connect {
     
     
     
-    
+    /*
     public static void main(String[] args) {
         //connect();
         Connect db = new Connect();
@@ -698,7 +700,7 @@ public class Connect {
         System.out.println();
         
         System.out.println(db.selectAccountID("Henry", "Wilt"));
-    }
+    }*/
     
     
 }
