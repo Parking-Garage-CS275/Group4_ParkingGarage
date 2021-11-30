@@ -4,7 +4,7 @@ package GUI;
 
 import GUI.PGarage;
 import GUI.start;
-import GUI.CalculateTime;
+import GUI.CalculateCost;
 import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.ArrayList;
 
@@ -25,36 +25,30 @@ public class Main {
         */
         
         
-       PGarage parkingGarage = new PGarage();
+       //PGarage parkingGarage = new PGarage();
        
        //read in file and create new customers during runtime
-       Database database = new Database("Database.txt");
+       //Database database = new Database("Database.txt");
        
        //fill the parking spot in the garage that the customer picks
        
-       
+       /*
        for(int i = 0 ; i < database.getCustomers().size() ; i++){
            parkingGarage.fillParkingSpot(database.getParkingSpot(i));
        }
+       */
        
        
-       String start_date
-                = "05-17-2020 06:35";
 
-            // Given end Date
-            String end_date
-                = "05-17-2021 06:35";
-
-            // Function Call
             
-            String checkInTime = "05-17-2020 06:35" ; String checkOutTime = "05-17-2021 06:36";
-            CalculateTime timeCalculator = new CalculateTime();
-            int difference = (timeCalculator.findDifference(checkInTime, checkOutTime));
+            String checkInTime = "05-17-2021 06:35" ; String checkOutTime = "05-17-2021 17:36";
+            CalculateCost timeCalculator = new CalculateCost();
+            double totalCost = (timeCalculator.calculateTotalCost(checkInTime, checkOutTime));
             
-            System.out.println("difference in minutes: " + difference);
+            System.out.println("total cost of stay: " + totalCost);
        
        
-       new start().setVisible(true);
+       //new start().setVisible(true);
        
        
        
