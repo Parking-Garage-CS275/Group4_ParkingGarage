@@ -1,5 +1,9 @@
 package GUI;
 
+
+import GUI.CheckIn;
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -9,78 +13,18 @@ package GUI;
  *
  * @author Owner
  */
+public class CheckOut extends javax.swing.JFrame {
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import javax.swing.JOptionPane;
-
-public class CheckIn extends javax.swing.JFrame {
-
-    // create 2D array. Rows wil be A-E, columns 1-9
-    // if someone selects B3 then its [1][2] (i think)
-    public static String [][] garage = new String[5][10];
-    public static ArrayList<String> a = new ArrayList<String>();
-    public static ArrayList<String> b = new ArrayList<String>();
-    public static ArrayList<String> c = new ArrayList<String>();
-    public static ArrayList<String> d = new ArrayList<String>();
-    public static ArrayList<String> e = new ArrayList<String>();
-    // arraylist holding the spots filled by vehicles
-    public static ArrayList<String> leave = new ArrayList<String>();
-    public static String selectedValue = "";
-    public static String floor;
-    public static String spotNumeral;
-    public static String takenSpot = "X";
-    public static int counter = 0;
-    public static int counterA = 9;
-    public static int counterB = 9;
-    public static int counterC = 9;
-    public static int counterD = 9;
-    public static int counterE = 9;
-    
     /**
-     * Creates new form CheckIn
-     */
-    public CheckIn() {
+     * Creates new form CheckOut
+     */ Time T1 = new Time();
+        int checkIN = 0;
+        int checkOut = 0;
+        double duration = 0;
+    public CheckOut() {
         initComponents();
-        
-        jLabel1.setText(String.valueOf(counterA));
-        jLabel2.setText(String.valueOf(counterB));
-        jLabel3.setText(String.valueOf(counterC));
-        jLabel4.setText(String.valueOf(counterD));
-        jLabel5.setText(String.valueOf(counterE));
-                
-        
-        if (counter == 0){
-        for(int i = 0; i < 9; i++) {
-            a.add("A" + String.valueOf(i + 1));
-        }
-        for(int i = 0; i < 9; i++) {
-            b.add("B" + String.valueOf(i + 1));
-        }
-        for(int i = 0; i < 9; i++) {
-            c.add("C" + String.valueOf(i + 1));
-        }
-        for(int i = 0; i < 9; i++) {
-            d.add("D" + String.valueOf(i + 1));
-        }
-        for(int i = 0; i < 9; i++) {
-            e.add("E" + String.valueOf(i + 1));
-        } 
-        counter++;
-        }
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(a.toArray()));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(b.toArray()));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(c.toArray()));
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(d.toArray()));
-        combSpot.setModel(new javax.swing.DefaultComboBoxModel(e.toArray()));
-        
-        for (int i = 0; i < 5; i++){
-            for (int k = 0; k <9; k++){
-                garage[i][k] = "-";
-            }
-        }
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(leave.toArray()));
+   
+        combSpot.setModel(new javax.swing.DefaultComboBoxModel(CheckIn.leave.toArray()));
     }
 
     /**
@@ -92,41 +36,35 @@ public class CheckIn extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblDate = new javax.swing.JLabel();
-        txtDate = new javax.swing.JTextField();
-        lblSpot = new javax.swing.JLabel();
-        combSpot = new javax.swing.JComboBox<>();
-        btnBack = new javax.swing.JButton();
-        btnCheckIn = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        txtName = new javax.swing.JTextField();
-        lblName = new javax.swing.JLabel();
-        lblSelectedSpot = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        txtDate1 = new javax.swing.JTextField();
+        combSpot = new javax.swing.JComboBox<>();
+        btnYes = new javax.swing.JButton();
+        btnNo = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+        btnSubmit = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtDate2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblDate.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblDate.setText("DATE:");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setText("DATE");
 
-        txtDate.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setText("SPOT");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setText("Are you a subscriber?");
+
+        txtDate1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDateActionPerformed(evt);
+                txtDate1ActionPerformed(evt);
             }
         });
-
-        lblSpot.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblSpot.setText("SPOT:");
 
         combSpot.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         combSpot.addActionListener(new java.awt.event.ActionListener() {
@@ -134,6 +72,11 @@ public class CheckIn extends javax.swing.JFrame {
                 combSpotActionPerformed(evt);
             }
         });
+
+        btnYes.setText("YES");
+
+        btnNo.setText("NO");
+        btnNo.setToolTipText("");
 
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnBack.setText("BACK");
@@ -143,386 +86,154 @@ public class CheckIn extends javax.swing.JFrame {
             }
         });
 
-        btnCheckIn.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        btnCheckIn.setText("CHECK IN");
-        btnCheckIn.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCheckInActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jTextField2ActionPerformed(evt);
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setText("TOTAL");
+
+        txtDate2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                txtDate2ActionPerformed(evt);
             }
         });
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
-            }
-        });
-
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
-            }
-        });
-
-        txtName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNameActionPerformed(evt);
-            }
-        });
-
-        lblName.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblName.setText("Name:");
-
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox5ActionPerformed(evt);
-            }
-        });
-
-        jTextField1.setText("Unavailable Spots");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("jLabel1");
-
-        jLabel2.setText("jLabel2");
-
-        jLabel3.setText("jLabel3");
-
-        jLabel4.setText("jLabel4");
-
-        jLabel5.setText("jLabel5");
-
-        jTextField2.setText("Available spots per floor");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(113, 113, 113)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lblSpot))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblDate)
-                                    .addComponent(lblName))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnBack)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addGap(27, 27, 27)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnCheckIn)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(19, 19, 19)
-                                                .addComponent(jLabel2)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addComponent(jLabel3)
-                                                .addGap(31, 31, 31)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addComponent(jLabel4)
-                                                .addGap(35, 35, 35))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(81, 81, 81)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(combSpot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(39, 39, 39)))
-                        .addComponent(lblSelectedSpot)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(combSpot, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(47, 47, 47)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtDate2, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                                    .addComponent(txtDate1))
+                                .addGap(43, 43, 43))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(63, 63, 63)
+                                .addComponent(btnYes))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel4)
+                                .addComponent(btnBack)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addComponent(btnSubmit))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnNo))))))
+                .addContainerGap(410, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(67, 67, 67)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblName)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDate, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtDate1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(lblSelectedSpot))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblSpot, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(combSpot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(txtDate2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(combSpot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(106, 106, 106)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(btnYes)
+                    .addComponent(btnNo))
+                .addGap(134, 134, 134)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBack)
-                    .addComponent(btnCheckIn))
-                .addContainerGap(59, Short.MAX_VALUE))
+                    .addComponent(btnSubmit))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(102, 102, 102))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDateActionPerformed
-
-    private void combSpotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combSpotActionPerformed
-        // TODO add your handling code here:
-        selectedValue = combSpot.getSelectedItem().toString();
-        lblSelectedSpot.setText(selectedValue);
-    }//GEN-LAST:event_combSpotActionPerformed
-
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
         dispose();
         new start().setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnCheckInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckInActionPerformed
+    private void txtDate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDate1ActionPerformed
         // TODO add your handling code here:
+        int D1 =  Integer.parseInt(txtDate1.getText());
         
+        this.checkIN = D1;
+    }//GEN-LAST:event_txtDate1ActionPerformed
+
+    private void txtDate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDate2ActionPerformed
         // TODO add your handling code here:
-        // get the selected spot
-        selectedValue = lblSelectedSpot.getText();
-        // split the spot into the floor and number, then fill the spot in the 2D array
+        int D2 =  Integer.parseInt(txtDate1.getText());
         
-        floor = selectedValue.substring(0, 1);
-        spotNumeral = selectedValue.substring(1);
+        this.checkOut = D2;
+    }//GEN-LAST:event_txtDate2ActionPerformed
+
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+        // TODO add your handling code here:
+        /*
+        // remove spot from unavailable spots array
+        selectedValue = combSpot.getSelectedItem().toString();
+        while (leave.hasNext()) {
+            String x = (String)leave.next();
+            if (x.equals(selectedValue)){
+                leave.remove();
+            }
+        }*/
         
-        int floorInt = 0;
-        int spotInt = 0;
-            if (null != floor) 
-        switch (floor) {
-            case "A":
-                floorInt = 0;
-                break;
-            case "B":
-                floorInt = 1;
-                break;
-            case "C":
-                floorInt = 2;
-                break;
-            case "D":
-                floorInt = 3;
-                break;
-            case "E":
-                floorInt = 4;
-                break;
-            default:
-                break;
-        }
-            if (null != spotNumeral) 
-        switch (spotNumeral) {
-            case "0":
-                spotInt = 0;
-                break;
-            case "1":
-                spotInt = 1;
-                break;
-            case "2":
-                spotInt = 2;
-                break;
-            case "3":
-                spotInt = 3;
-                break;
-            case "4":
-                spotInt = 4;
-                break;
-            case "5":
-                spotInt = 5;
-                break;
-            case "6":
-                spotInt = 6;
-                break;
-            case "7":
-                spotInt = 7;
-                break;
-            case "8":
-                spotInt = 8;
-                break;
-            case "9":
-                spotInt = 9;
-                break;
-            default:
-                break;
-        }
-            
-        // put a car into the 2d array
-        //fillParkingSpot(selectedValue);
-        garage[floorInt][spotInt] = takenSpot;
-        // remove the spot from the array/combo box
-        //switch (floorInt) {
-            if (floorInt == 0){
-                Iterator itr = a.iterator();
-                    while (itr.hasNext()) {
-                        String x = (String)itr.next();
-                        if (x.equals(selectedValue)){
-                            itr.remove();
-                            counterA--;
-                            jLabel1.setText(String.valueOf(counterA));
-                        }
-                    }       jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(a.toArray()));
-                }
-            else if (floorInt == 1){
-                Iterator itr = b.iterator();
-                    while (itr.hasNext()) {
-                        String x = (String)itr.next();
-                        if (x.equals(selectedValue)){
-                            itr.remove();
-                            counterB--;
-                            jLabel2.setText(String.valueOf(counterB));
-                        }
-                    }       jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(b.toArray()));
-                }
-            else if (floorInt == 2){
-                Iterator itr = c.iterator();
-                    while (itr.hasNext()) {
-                        String x = (String)itr.next();
-                        if (x.equals(selectedValue)){
-                            itr.remove();
-                            counterC--;
-                            jLabel3.setText(String.valueOf(counterC));
-                        }
-                    }       jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(c.toArray()));
-                }
-            else if (floorInt == 3){
-                Iterator itr = d.iterator();
-                    while (itr.hasNext()) {
-                        String x = (String)itr.next();
-                        if (x.equals(selectedValue)){
-                            itr.remove();
-                            counterD--;
-                            jLabel4.setText(String.valueOf(counterD));
-                        }
-                    }       jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(d.toArray()));
-                }
-            else if (floorInt == 4){
-                Iterator itr = e.iterator();
-                    while (itr.hasNext()) {
-                        String x = (String)itr.next();
-                        if (x.equals(selectedValue)){
-                            itr.remove();
-                            counterE--;
-                            jLabel5.setText(String.valueOf(counterE));
-                        }
-                    }       combSpot.setModel(new javax.swing.DefaultComboBoxModel(e.toArray()));
-                }
-        // write loop here calling sort method to add selectedValue tothe arraylist in correct order
-        leave.add(selectedValue);
-        Collections.sort(leave);  
-        lblSelectedSpot.setText(selectedValue);
         
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(leave.toArray()));
-        //**ADD CODE FOR RECEIVING THE CHECK IN TIME/DATE**
+       this.duration =  T1.Duration(checkIN,checkOut);
+       
+       txtDate1.setText("");
+       txtDate2.setText("");
+       new start().setVisible(true);
+       dispose();
         
-        txtDate.setText("");
-        JOptionPane.showMessageDialog(this, "You have been checked in, please park in spot " + lblSelectedSpot.getText() + ".");
-        new start().setVisible(true);
-        dispose();
         
-    }//GEN-LAST:event_btnCheckInActionPerformed
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
-        selectedValue = jComboBox1.getSelectedItem().toString();
-        lblSelectedSpot.setText(selectedValue);
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+        String duration1 = String.valueOf(duration);
+        jTextField2.setText(duration1);
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void combSpotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combSpotActionPerformed
         // TODO add your handling code here:
-        selectedValue = jComboBox2.getSelectedItem().toString();
-        lblSelectedSpot.setText(selectedValue);
-    }//GEN-LAST:event_jComboBox2ActionPerformed
-
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
-        // TODO add your handling code here:
-        selectedValue = jComboBox3.getSelectedItem().toString();
-        lblSelectedSpot.setText(selectedValue);
-    }//GEN-LAST:event_jComboBox3ActionPerformed
-
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
-        // TODO add your handling code here:
-        selectedValue = jComboBox4.getSelectedItem().toString();
-        lblSelectedSpot.setText(selectedValue);
-    }//GEN-LAST:event_jComboBox4ActionPerformed
-
-    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNameActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox5ActionPerformed
+    }//GEN-LAST:event_combSpotActionPerformed
 
     /**
      * @param args the command line arguments
@@ -541,45 +252,36 @@ public class CheckIn extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CheckIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CheckOut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CheckIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CheckOut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CheckIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CheckOut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CheckIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CheckOut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CheckIn().setVisible(true);
+                new CheckOut().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnCheckIn;
+    private javax.swing.JButton btnNo;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JButton btnYes;
     private javax.swing.JComboBox<String> combSpot;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JLabel lblDate;
-    private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblSelectedSpot;
-    private javax.swing.JLabel lblSpot;
-    private javax.swing.JTextField txtDate;
-    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtDate1;
+    private javax.swing.JTextField txtDate2;
     // End of variables declaration//GEN-END:variables
 }

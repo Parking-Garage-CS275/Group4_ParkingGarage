@@ -2,6 +2,7 @@ package GUI;
 
 
 
+
 import GUI.PGarage;
 import GUI.start;
 import GUI.CalculateCost;
@@ -13,12 +14,25 @@ import java.util.ArrayList;
 
 
 public class Main {
+    
+    public static Connect database(){
+        Connect database = new Connect();
+        database.createNewDatabase();
+        database.createAccountTable();    
+        database.createSpotsTable();
+        database.createTakenSpotTable();
+        
+        database.selectAllSpots();
+
+
+        return database;
+    }
+    
     public static void main(String[] args) throws FileNotFoundException{
         
-       
-       new start().setVisible(true);
-       
-       
-       
+
+        Connect db = database();
+        
+        new start().setVisible(true);   
     }
 }
