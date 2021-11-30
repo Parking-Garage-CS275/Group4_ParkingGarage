@@ -48,7 +48,7 @@ public class Main {
             System.out.println("total cost of stay: " + totalCost);
        
        
-       //new start().setVisible(true);
+       new start().setVisible(true);
        
        
        
